@@ -14,9 +14,9 @@ export class AlbumsService {
       return  this.http.get('https://jsonplaceholder.typicode.com/albums')
         .map(response => {
             return response.json();
-        })
-        
+        })        
     }
+    
 
     getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
         // calculate total pages

@@ -1,1 +1,19 @@
-<a href="#!" class="collection-item"><span class="badge"><i class="material-icons">chevron_right</i></span>{{album.id}}: {{album.title}}</a>
+
+<div class="collection">
+    <a *ngFor="let album of pagedItems" routerLink="/photos" class="collection-item"><span class="badge"><i class="material-icons">chevron_right</i></span>{{album.id}}: {{album.title}}</a>
+</div>
+
+
+<ul class="pagination center">
+    <li class="waves-effect" [ngClass]="{disabled:pager.currentPage === 1}"><a  
+        (click)="setPage(pager.currentPage - 1)"
+    ><i class="material-icons">chevron_left</i></a></li>
+
+    <li *ngFor="let page of pager.pages" class="waves-effect" [ngClass]="{active:pager.currentPage === page}" ><a 
+        (click)="setPage(page)"
+    >{{page}}</a></li>
+
+    <li class="waves-effect" [ngClass]="{disabled:pager.currentPage === pager.totalPages}"><a
+        (click)="setPage(pager.currentPage + 1)"
+    ><i class="material-icons">chevron_right</i></a></li>
+</ul>

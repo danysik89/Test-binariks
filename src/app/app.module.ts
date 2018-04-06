@@ -9,9 +9,11 @@ import { AlbumsComponent } from './albums/albums.component';
 import { AlbumsService } from './albums.service';
 import { PhotosComponent } from './photos/photos.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [
-  {path: '', component: AlbumsComponent},
+  {path: '', component: MainComponent},
+  {path: 'albums', component: AlbumsComponent},
   {path: 'photos', component: PhotosComponent}
 ];
 
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AlbumsComponent,
-    PhotosComponent
+    PhotosComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
