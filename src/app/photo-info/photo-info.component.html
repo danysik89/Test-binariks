@@ -1,17 +1,17 @@
 <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src="http://cs625425.vk.me/v625425435/3d9f2/cPGHlAURBrg.jpg">
-          <span class="card-title">Card Title</span>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
+  <div class="button">
+      <a class="waves-effect waves-light btn-small" (click)="goBack()">back</a>
   </div>
+  
+
+      <div class="photo-info">
+          <div class="col s12 m5">
+            <img src="{{photoInfo.url}}" alt="photo">
+          </div> 
+          <div class="col s12 m7">
+            <h2>Photo information</h2>
+            <p>{{photoInfo.title}}</p>           
+          </div> 
+      </div> 
+     
+</div>

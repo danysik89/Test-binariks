@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'albums', component: AlbumsComponent},
   {path: 'albums/:id', component: PhotosComponent},
-  {path: ':id/:idPhoto', component: PhotoInfoComponent}
+  {path: 'albums/:id/:idPhoto', component: PhotoInfoComponent}
 ];
 
 

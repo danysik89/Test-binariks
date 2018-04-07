@@ -1,4 +1,8 @@
 <div class="row">
+    <div class="button">
+        <a class="waves-effect waves-light btn-small" (click)="goBack()">back</a>
+    </div>
+
     <div class="col s6 m3"
       *ngFor="let photo of photos"
     >
@@ -8,7 +12,7 @@
           <span class="card-title"></span>
         </div>
         <div class="card-action">
-          <a routerLink="/{{photo.albumId}}/{{photo.id}}">Photos info {{photos.title}}</a>
+          <a routerLink="/albums/{{photo.albumId}}/{{photo.id}}">Photos info </a>
         </div>
       </div>
     </div>
