@@ -1,6 +1,7 @@
 
 <div class="collection">
-    <a *ngFor="let album of pagedItems" routerLink="/photos" class="collection-item"><span class="badge"><i class="material-icons">chevron_right</i></span>{{album.id}}: {{album.title}}</a>
+    <a *ngFor="let album of pagedItems" 
+     routerLink="/albums/{{album.id}}" class="collection-item"><span class="badge"><i class="material-icons">chevron_right</i></span>{{album.id}}: {{album.title}}</a>
 </div>
 
 

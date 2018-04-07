@@ -10,11 +10,13 @@ import { AlbumsService } from './albums.service';
 import { PhotosComponent } from './photos/photos.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { PhotoInfoComponent } from './photo-info/photo-info.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'albums', component: AlbumsComponent},
-  {path: 'photos', component: PhotosComponent}
+  {path: 'albums/:id', component: PhotosComponent},
+  {path: ':id/:idPhoto', component: PhotoInfoComponent}
 ];
 
 
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     AlbumsComponent,
     PhotosComponent,
-    MainComponent
+    MainComponent,
+    PhotoInfoComponent
   ],
   imports: [
     BrowserModule,

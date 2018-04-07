@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
@@ -15,10 +15,8 @@ import { AlbumsService } from '../albums.service';
 })
 export class AlbumsComponent implements OnInit {
 
-  
   albums = [];
-  id = 1;
-
+  id:number = 1;
   // pager object
   pager: any = {};
 
@@ -27,19 +25,12 @@ export class AlbumsComponent implements OnInit {
 
   constructor(private http: Http, private albumsService: AlbumsService) {}
 
-  getPhotos() {
-    return  this.http.get('https://jsonplaceholder.typicode.com/photos?albumId=' + this.id)
-      .map(response => {
-          return response.json();
-      })
-      .subscribe(photos => {
-        this.photos = photos;
-      })        
-  }
+
 
   ngOnInit() {
     this.albumsService.getAlbums().subscribe(albums => {
       this.albums = albums;
+      this.id = albums.id;
       // initialize to page 1
       this.setPage(1);
     })

@@ -1,22 +1,38 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import * as _ from 'underscore';
+import { AlbumsComponent } from "./albums/albums.component";
 
 @Injectable()
 export class AlbumsService {
-    constructor(private http: Http) {
 
+    id = 1;
+
+    constructor(private http: Http) {
+        
     }
 
     getAlbums() {
       return  this.http.get('https://jsonplaceholder.typicode.com/albums')
         .map(response => {
             return response.json();
-        })        
+        })             
     }
-    
+    getPhotos(id) {
+        return  this.http.get(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
+        .map(response => {
+            return response.json();
+        })         
+    }
+    getPhotoInfo(id) {
+        return  this.http.get(`https://jsonplaceholder.typicode.com/photos/${id}`)
+        .map(response => {
+            return response.json();
+        })         
+    }
 
     getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
         // calculate total pages
